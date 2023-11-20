@@ -1,0 +1,13 @@
+# for help
+python Main.py fit --help 
+
+# to train a model on the real data, do not for get to adjust the --data.data_dir and --data.test_data_dir to the appropriate directory of the real data train and the external test data
+python Main.py fit --model Models.res50 --model.num_classes 5 --model.tmax 100 --data Data_modules.DPpublicdata --data.data_dir // --data.test_data_dir // --data.batch_size 32 --data.num_workers 4 --trainer.accelerator gpu --trainer.devices [0] --trainer.max_epochs 100 --trainer.callbacks+=LearningRateMonitor --trainer.callbacks.logging_interval=epoch --trainer.callbacks+=ModelCheckpoint --trainer.callbacks.monitor val_loss --trainer.callbacks.save_top_k 2 --trainer.callbacks.every_n_epochs 40
+
+# to train a model on the synthetic data, do not for get to adjust the --data.data_dir to the appropriate directory of the synthetic data 
+python Main.py fit --model Models.res50 --model.num_classes 5 --model.tmax 100 --data Data_modules.DPsyntheticdata --data.data_dir //  --data.batch_size 16 --data.num_workers 8 --trainer.accelerator gpu --trainer.devices [0] --trainer.max_epochs 100 --trainer.callbacks+=LearningRateMonitor --trainer.callbacks.logging_interval=epoch --trainer.callbacks+=ModelCheckpoint --trainer.callbacks.monitor val_loss --trainer.callbacks.every_n_epochs 40
+
+# to train a model with a mix of real and fake data, do not for get to adjust the --data.data_dir_real and --data.data_dir_fake to the appropriate directory of real train data and the synthetic data
+python Main.py fit --model Models.res50 --model.num_classes 5 --model.tmax 100 --data Data_modules.DPmix --data.data_dir_real // --data.data_dir_fake // --data.batch_size 32 --data.num_workers 4 --trainer.accelerator gpu --trainer.devices [0] --trainer.max_epochs 100 --trainer.callbacks+=LearningRateMonitor --trainer.callbacks.logging_interval=epoch --trainer.callbacks+=ModelCheckpoint --trainer.callbacks.monitor val_loss 
+
+
