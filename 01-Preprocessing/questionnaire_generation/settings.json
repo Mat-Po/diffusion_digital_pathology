@@ -1,0 +1,18 @@
+{
+	"number_questionnaires": 1,
+	"tiles_per_image_first_task": 3,
+	"number_images_first_task_per_tissue": 10,
+	"number_images_second_task_per_tissue": 20,
+	"questionnaire_specific_number_first_task_questions_per_tissue": 0,
+	"questionnaire_specific_number_second_task_questions_per_tissue": 0,
+	"real_tiles_path": "/data4/erobbi/tiles_thres/",
+	"fake_tiles_path": "/data4/erobbi/synthetic_tiles_512TO256_GTEX/",
+	"tissues": [
+		"Brain",
+		"Kidney",
+		"Lung",
+		"Pancreas",
+		"Uterus"
+	],
+	"output_path": "/data4/erobbi/questionnaires/"
+}

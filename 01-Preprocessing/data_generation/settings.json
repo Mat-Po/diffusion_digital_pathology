@@ -1,0 +1,26 @@
+{
+	"general_parameters": {
+		"slides_path": "/data4/erobbi/gtex_slides_untouched/",
+		"processed_path": "/data4/erobbi/grid_extracted_tiles/train/",
+		"normalization_path": "",
+		"tiling_preview_path":"/data4/erobbi/preview-gtex-untouched/",
+		"tile_size": 512,
+		"level": 1,
+		"pixel_overlap": 0,
+		"check_tissue": false,
+		"prefix": "",
+		"suffix": ".png",
+		"tissues": [
+			"Brain",
+			"Lung",
+			"Pancreas",
+			"Kidney",
+			"Uterus"
+		]
+	},
+	"normalization_parameters": {
+		"targets": {
+			"tissue": "target"
+		}
+	}
+}
